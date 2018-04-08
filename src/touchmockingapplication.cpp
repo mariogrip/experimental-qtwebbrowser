@@ -30,7 +30,7 @@
 #include "touchmockingapplication.h"
 #include "appengine.h"
 
-#include <qpa/qwindowsysteminterface.h>
+//#include <qpa/qwindowsysteminterface.h>
 #include <QtCore/QRegExp>
 #include <QtCore/QEvent>
 #include <QtGui/QMouseEvent>
@@ -214,7 +214,7 @@ bool TouchMockingApplication::sendTouchEvent(QQuickView* window, QEvent::Type ty
     if (!device) {
         device = new QTouchDevice;
         device->setType(QTouchDevice::TouchScreen);
-        QWindowSystemInterface::registerTouchDevice(device);
+        //QWindowSystemInterface::registerTouchDevice(device);
     }
 
     m_pendingFakeTouchEventCount++;

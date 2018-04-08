@@ -39,7 +39,7 @@
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickView>
-#include <QtWebEngine/qtwebengineglobal.h>
+//#include <QtWebEngine/qtwebengineglobal.h>
 
 static QObject *engine_factory(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -81,7 +81,7 @@ int main(int argc, char **argv)
     qmlRegisterType<TouchTracker>("WebBrowser", 1, 0, "TouchTracker");
     qmlRegisterSingletonType<AppEngine>("WebBrowser", 1, 0, "AppEngine", engine_factory);
 
-    QtWebEngine::initialize();
+    //QtWebEngine::initialize();
 
     app.setOrganizationName("The Qt Company");
     app.setOrganizationDomain("qt.io");

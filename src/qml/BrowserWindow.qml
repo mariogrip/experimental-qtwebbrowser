@@ -28,7 +28,10 @@
 ****************************************************************************/
 
 import QtQuick 2.5
-import QtWebEngine 1.1
+
+// Choose between WebKit and Webengine
+//import QtWebEngine 1.1
+import QtWebKit 3.0
 
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Styles 1.0
@@ -304,7 +307,7 @@ Item {
 
         SearchProxyModel {
             id: proxy
-            target: navigation.webView.navigationHistory.items
+            //target: navigation.webView.navigationHistory.items // QtWebEngine
             searchString: urlDropDown.searchString
             enabled: urlDropDown.state == "enabled"
         }

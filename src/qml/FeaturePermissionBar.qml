@@ -29,7 +29,11 @@
 
 import QtQuick 2.1
 import QtQuick.Controls 1.0
-import QtWebEngine 1.1
+
+// Choose
+//import QtWebEngine 1.1
+import QtWebKit 3.0
+
 import QtQuick.Layouts 1.0
 
 import "assets"
@@ -37,7 +41,8 @@ import "assets"
 Rectangle {
     property var requestedFeature;
     property url securityOrigin;
-    property WebEngineView view;
+    //property WebEngineView view; // QtWebEngine
+    property WebView view; // QtWebKit
 
     id: permissionBar
     visible: false

@@ -28,7 +28,11 @@
 ****************************************************************************/
 
 import QtQuick 2.5
-import QtWebEngine 1.1
+
+// Choose
+//import QtWebEngine 1.1
+import QtWebKit 3.0
+
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.2
@@ -55,6 +59,7 @@ Rectangle {
             homeScreen.state = "disabled"
     }
 
+/* QtWebEngine
     property QtObject otrProfile: WebEngineProfile {
         offTheRecord: true
     }
@@ -63,6 +68,7 @@ Rectangle {
         storageName: "YABProfile"
         offTheRecord: false
     }
+*/
 
     Component {
         id: tabComponent
@@ -105,7 +111,8 @@ Rectangle {
                 z: 3
             }
 
-            WebEngineView {
+            //WebEngineView { // QtWebEngine
+            WebView {         // QtWebKit
                 id: webEngineView
 
                 anchors {
@@ -113,7 +120,7 @@ Rectangle {
                     top: permBar.bottom
                 }
 
-                profile: settingsView.privateBrowsingEnabled ? otrProfile : defaultProfile
+                //profile: settingsView.privateBrowsingEnabled ? otrProfile : defaultProfile // QtWebEngine
                 enabled: root.interactive
 
                 function takeSnapshot() {
@@ -132,7 +139,7 @@ Rectangle {
                         console.log("takeSnapshot("+result.url+")")
                     });
                 }
-
+/* QtWebEngine
                 // Trigger a refresh to check if the new url is bookmarked.
                 onUrlChanged: navigation.refresh()
 
@@ -197,6 +204,7 @@ Rectangle {
                         viewState = "page"
                     request.accept()
                 }
+QtWebEngine */
             }
 
             Desaturate {

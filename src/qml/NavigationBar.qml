@@ -384,6 +384,8 @@ ToolBar {
             height: parent.height
             color: uiSeparatorColor
         }
+        /*
+        The settings wont work with qtwebkit, so just hide it!
         UIButton {
             id: settingsButton
             source: "icons/Btn_Settings.png"
@@ -392,7 +394,7 @@ ToolBar {
             onClicked: {
                 settingsView.state = "enabled"
             }
-        }
+        } */
     }
     ProgressBar {
         id: progressBar
